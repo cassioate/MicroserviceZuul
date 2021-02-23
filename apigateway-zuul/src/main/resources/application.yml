@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: zuul   
+zuul:
+  prefix: /api
+ # ignored-services: '*'
+  routes:
+    fornecedores:
+      path: /fornecedores/**
+      service-id: fornecedores
+    lojas:
+      path: /lojas/**
+      service-id: lojas
+eureka:
+  client:
+    service-url:
+      defaulZone: http://localhost:8761/eureka
